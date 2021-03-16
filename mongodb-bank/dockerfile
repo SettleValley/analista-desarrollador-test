@@ -1,0 +1,19 @@
+FROM mongo:latest
+
+# Define mountable directories.
+VOLUME ["/data/db"]
+
+# Create app directory
+WORKDIR /data
+
+COPY . .
+
+EXPOSE 27017
+# Define default command.
+CMD ["mongod"]
+
+
+
+RUN ["chmod", "+x", "init.sh"]
+
+
