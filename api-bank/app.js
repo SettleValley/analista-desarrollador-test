@@ -7,7 +7,7 @@ const cors = require("cors");
 //db
 const mongoose = require("mongoose");
 // const domain = ENV["HOSTNAME"] || "localhost";
-mongoose.connect(`mongodb://mongodb:27017/bank`, {useNewUrlParser: true, useUnifiedTopology: true}).then(
+mongoose.connect(`mongodb://localhost:27017/bank`, {useNewUrlParser: true, useUnifiedTopology: true}).then(
     ()=> console.log("Mongoose Connected"),
     err => console.log(`Mongoose Error: ${err}`)
 );
@@ -18,7 +18,7 @@ const usersRouter = require('./routes/users');
 const app = express();
 
 const corsOptions = {
-    origin: "http://localhost:3001"
+    origin: "http://localhost:4200"
   };
   
 app.use(cors(corsOptions));

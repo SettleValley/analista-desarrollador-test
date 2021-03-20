@@ -11,7 +11,10 @@ exports.signup = (req, res)=>{
             res.status(500).send({message: err});
             return;
         }
-        res.send({message: "Te guardaste bien en la db, guapo"});
+        const token = jwt.sign({ id: user.id }, "settlevalley-verify-token", {
+            expiresIn: 86400 // 24 hours
+          });
+        res.send({message: "Te guardaste bien en la db, guapo", token: token});
     })
 }
 
