@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 // const User = require("../models/user");
 
 module.exports.verifyToken = (req, res, next)=>{
-    let token = req.headers["x-access-token"];
+    let token = req.headers["authorization"].split(' ')[1];
     console.log(token);
     
     if(!token) return res.status(403).send({message: "Que va no tienes token papa"})
