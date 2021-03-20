@@ -1,5 +1,34 @@
-<p>client-detail works!</p>
-<!-- <div *ngFor="let item of client | keyvalue">
-    Key: <b>{{item.CLIENTNUM}}</b> 
-</div> -->
-{{client.CLIENTNUM}}
+<div class="row">
+    <div class="col-md-4">
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+                {{client.CLIENTNUM}}
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Lorem Impsum</h5>
+              <footer class="blockquote-footer">Flag: <cite title="Source Title">{{client.Attrition_Flag}}</cite></footer>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Age: {{client.Customer_Age}}</li>
+              <li class="list-group-item">Gender: {{client.Gender}}</li>
+              <li class="list-group-item">Education Level: {{client.Education_Level}}</li>
+              <li class="list-group-item">Marital Status: {{client.Marital_Status}}</li>
+              <li class="list-group-item">Income Range: {{client.Income_Category}}</li>
+              <li class="list-group-item">Card Type: {{client.Card_Category}}</li>
+              <li class="list-group-item">Months: {{client.Months_on_book}}</li>
+            </ul>
+            <div class="card-body">
+              <a href="#" class="btn btn-info">Analizar Kmean</a>
+            </div>
+          </div>
+    </div>
+    <div class="col-8">
+        <div class="card">
+            <div class="card-header">
+                Client info
+            </div>
+            <div class="card-body">                
+            </div>
+        </div>
+    </div>
+</div>
