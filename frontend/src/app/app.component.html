@@ -10,12 +10,19 @@
           <li class="nav-item">
             <a class="nav-link" routerLinkActive="active" routerLink="/dashboard">Dashboard</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/signin">Signin</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="/signup">Signup</a>
-          </li>
+          <ng-container *ngIf="!authService.loggedIn(); else loggedIn">
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="/signin">Signin</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="/signup">Signup</a>
+            </li>
+          </ng-container>
+          <ng-template #loggedIn>
+            <li class="nav-item">
+              <a style="cursor: pointer;" class="nav-link" (click)="authService.logout()">Logout</a>
+            </li>
+          </ng-template>
         </ul>
       </div>
     </div>
