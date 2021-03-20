@@ -8,7 +8,13 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 // const domain = ENV["HOSTNAME"] || "localhost";
 mongoose.connect(`mongodb://localhost:27017/bank`, {useNewUrlParser: true, useUnifiedTopology: true}).then(
-    ()=> console.log("Mongoose Connected"),
+    ()=> {
+      console.log("Mongoose Connected");
+      mongoose.connection.db.listCollections().toArray(function(err, names){
+        if(err) console.log(err)
+        console.log(names);
+      });
+    },
     err => console.log(`Mongoose Error: ${err}`)
 );
 

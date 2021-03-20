@@ -19,4 +19,6 @@ router.get("/all", userController.allAccess);
 /* GET home page. */
 router.get('/dashboard', authJWT.verifyToken, userController.userBoard);
 
+router.get('/client/:id', authJWT.verifyToken, userController.clientData);
+
 module.exports = router;

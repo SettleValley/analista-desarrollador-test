@@ -14,5 +14,8 @@ export class DashboardService {
   getData(){
     return this.http.get<any>(this.URL + '/dashboard')
   }
+  clientDataDetail(ID:String){
+    return this.http.get<any>(`${this.URL}/client/${ID}`)
+  }
 
 }

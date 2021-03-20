@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from "../../services/dashboard.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-dashboard',
@@ -9,9 +10,11 @@ import { DashboardService } from "../../services/dashboard.service";
 export class DashboardComponent implements OnInit {
 
   data = [];
+  clientID:String = "";
 
   constructor(
-    private dashboardService: DashboardService
+    private dashboardService: DashboardService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -23,6 +26,10 @@ export class DashboardComponent implements OnInit {
         },
         err => console.log(err)
       )
+  }
+
+  searchClientID(){
+    this.router.navigate([`/client/${this.clientID}`])
   }
 
 }

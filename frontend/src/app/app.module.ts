@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ClientDetailComponent } from "./components/client-detail/client-detail.component";
 
 import { AuthGuard } from "./auth.guard";
 import { TokenInterceptorService } from "./services/token-interceptor.service";
@@ -17,7 +18,8 @@ import { TokenInterceptorService } from "./services/token-interceptor.service";
     AppComponent,
     SignupComponent,
     SigninComponent,
-    DashboardComponent
+    DashboardComponent,
+    ClientDetailComponent
   ],
   imports: [
     BrowserModule,

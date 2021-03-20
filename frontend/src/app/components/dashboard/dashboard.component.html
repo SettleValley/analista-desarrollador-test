@@ -1,1 +1,8 @@
-<p>{{data}}</p>
+<form (ngSubmit)="searchClientID()" class="row gx-3 gy-2 align-items-center">
+    <div class="col-sm-9">
+        <input type="text" class="form-control" id="clientID" name="clientID" [(ngModel)]="clientID" placeholder="Buscar cliente en la DB">
+    </div>
+    <div class="col-auto">
+        <button type="submit">Buscar</button>    
+    </div>
+</form>

@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {DashboardComponent} from './components/dashboard/dashboard.component'
 import {SignupComponent} from './components/signup/signup.component'
 import {SigninComponent} from './components/signin/signin.component'
+import { ClientDetailComponent } from './components/client-detail/client-detail.component';
 
 import { AuthGuard } from "./auth.guard";
 
@@ -16,6 +17,11 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+    canActivate:[AuthGuard]
+  },
+  {
+    path: 'client/:id',
+    component: ClientDetailComponent,
     canActivate:[AuthGuard]
   },
   {
