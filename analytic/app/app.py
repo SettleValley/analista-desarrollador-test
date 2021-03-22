@@ -10,7 +10,7 @@ mongo = PyMongo(app)
 @app.route('/users/<id>', methods=['GET'])
 def kmeans(id):
     print(id)
-    data = mongo.db.clients.find({"CLIENTNUM": int(id)})
+    data = mongo.db.clients.find_one_or_404({"CLIENTNUM": int(id)})
     response = json_util.dumps(data)
 
     return Response(response, mimetype='application/json')
