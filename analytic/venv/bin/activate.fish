@@ -32,7 +32,7 @@ end
 # unset irrelavent variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/efrain/Escritorio/proyectos/Prueba de analista desarrollador/analytic/venv"
+set -gx VIRTUAL_ENV "/home/efrain/Escritorio/proyectos/Prueba AD/analytic/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

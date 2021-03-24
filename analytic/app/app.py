@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify, Response
 from flask_pymongo import PyMongo
 from bson import json_util
+from util import KmeanUserData
 
 app = Flask(__name__)
 
@@ -9,9 +10,12 @@ mongo = PyMongo(app)
 
 @app.route('/users/<id>', methods=['GET'])
 def kmeans(id):
-    print(id)
-    data = mongo.db.clients.find_one_or_404({"CLIENTNUM": int(id)})
-    response = json_util.dumps(data)
+    UserData = mongo.db.clients.find_one_or_404({"CLIENTNUM": int(id)})
+    AgeUserCompare = mongo.db.clients.find({"Customer_Age": UserData["Customer_Age"]})
+
+    Kalgorithm = KmeanUserData(AgeUserCompare)
+    val = Kalgorithm.UserAnalytic()
+    response = json_util.dumps(val)
 
     return Response(response, mimetype='application/json')
 
