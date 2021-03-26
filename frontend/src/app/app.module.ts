@@ -10,6 +10,8 @@ import { SigninComponent } from './components/signin/signin.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ClientDetailComponent } from "./components/client-detail/client-detail.component";
 
+import { ChartsModule } from 'ng2-charts';
+
 import { AuthGuard } from "./auth.guard";
 import { TokenInterceptorService } from "./services/token-interceptor.service";
 
@@ -25,7 +27,8 @@ import { TokenInterceptorService } from "./services/token-interceptor.service";
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule
   ],
   providers: [
     AuthGuard, 

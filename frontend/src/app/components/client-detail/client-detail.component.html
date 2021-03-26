@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-4">
-        <div class="card" style="width: 18rem;">
+        <div class="card" >
             <div class="card-header">
                 {{client.CLIENTNUM}}
             </div>
@@ -17,18 +17,53 @@
               <li class="list-group-item">Card Type: {{client.Card_Category}}</li>
               <li class="list-group-item">Months: {{client.Months_on_book}}</li>
             </ul>
-            <div class="card-body">
-              <a href="#" class="btn btn-info">Analizar Kmean</a>
-            </div>
           </div>
     </div>
-    <div class="col-8">
+    
+    <div class="col-md-8">
         <div class="card">
             <div class="card-header">
-                Client info
+              Gráfica Donughnuts del cliente
             </div>
-            <div class="card-body">                
-            </div>
+            <div class="card-body">
+              <button (click)="getUserClusterData()" type="button" class="btn btn-primary btn-lg btn-block">K-Means Clusters Button</button>
+              <div *ngIf="clicked; else elseBlock">
+                <div style="display: block">
+                  <canvas baseChart 
+                  [data]="doughnutChartData"
+                  [labels]="doughnutChartLabels"
+                  [chartType]="doughnutChartType">
+                  </canvas>
+                </div>
+                            
+              </div>
+              <ng-template #elseBlock>
+                <div class="text-center">
+                  You need to SMASH THAT BUTTON!
+                </div>
+              </ng-template>
+            </div>            
         </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="col-md-12 my-5">
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Cluster</th>
+            <th scope="col">Genero</th>
+            <th scope="col">Rango de ingreso</th>
+            <th scope="col">Liimte de credito</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of clusterData">
+            <th scope="row">{{item.cluster}}</th>
+            <td>{{item.Gender}}</td>
+            <td>{{item.Income_Category}}</td>
+            <td>${{item.Credit_Limit}}</td>
+          </tr>
+        </tbody>
+      </table> 
     </div>
 </div>

@@ -21,4 +21,6 @@ router.get('/dashboard', authJWT.verifyToken, userController.userBoard);
 
 router.get('/client/:id', authJWT.verifyToken, userController.clientData);
 
+router.get('/clientKmeans/:id', authJWT.verifyToken, userController.kmeans);
+
 module.exports = router;

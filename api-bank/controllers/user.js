@@ -1,4 +1,6 @@
 const Client = require("../models/client");
+const request = require('request');
+
 
 exports.allAccess = (req, res) => {
     res.status(200).send("Public Content.");
@@ -19,3 +21,18 @@ exports.clientData = (req, res) => {
 
         });
 };
+
+exports.kmeans = (req, res)=>{
+    const clientID = req.params.id;
+    const option = {
+        url: `http://localhost:5000/users/${clientID}`,
+    }
+    function callback(error, response,body){
+        if(!error && response.statusCode == 200){
+            res.status(200).send(JSON.parse(body));
+        }
+    }
+    request(option, callback)
+
+    
+}

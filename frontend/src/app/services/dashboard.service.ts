@@ -17,5 +17,8 @@ export class DashboardService {
   clientDataDetail(ID:String){
     return this.http.get<any>(`${this.URL}/client/${ID}`)
   }
+  clientClusterKmeans(ID:String){
+    return this.http.get<any>(`${this.URL}/clientKmeans/${ID}`)
+  }
 
 }
