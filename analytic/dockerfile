@@ -1,12 +1,14 @@
-FROM python:3.8
-WORKDIR /code
-COPY requirements.txt .
+FROM python:3.5.2-alpine
+COPY . /app
+WORKDIR /app
+
 
 # install dependencies
-RUN pip install -r requirements.txt
-
-# copy the content of the local src directory to the working directory
-COPY app/ .
+RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
+RUN python3 -m pip install numpy
+RUN python3 -m pip install pandas
+EXPOSE 5000 
 
 # command to run on container start
-CMD [ "python", "./app.py" ]
+ENTRYPOINT [ "python" ] 
+CMD [ "app.py" ]

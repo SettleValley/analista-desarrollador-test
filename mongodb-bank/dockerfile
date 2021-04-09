@@ -12,8 +12,8 @@ EXPOSE 27017
 # Define default command.
 CMD ["mongod"]
 
-
-
 RUN ["chmod", "+x", "init.sh"]
+
+
 
 

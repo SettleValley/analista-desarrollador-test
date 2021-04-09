@@ -1,2 +1,2 @@
 #! /bin/bash
-mongoimport --host mongodb --type csv --db bank --collection clients --headerline --ignoreBlanks --file /dump/BankChurners.csv
+mongoimport --host localhost --type csv --db bank --collection clients --headerline --ignoreBlanks --file /data/BankChurners.csv

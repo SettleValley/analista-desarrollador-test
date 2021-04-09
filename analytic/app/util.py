@@ -2,7 +2,6 @@ from sklearn.cluster import KMeans
 import pandas as pd
 from kneed import KneeLocator
 from sklearn.preprocessing import MinMaxScaler
-from matplotlib import pyplot as plt
 from bson import json_util
 
 
