@@ -70,10 +70,12 @@ Levantar app
     python app.py
 ```
 
-## Analytic Python
+## FrontEnd Angular
 > Angular 11
 
 Levantar app `/frontend`
 ```sh
     ng serve
 ```
+
+### 
