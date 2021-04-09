@@ -1,4 +1,4 @@
-# Intruciones para Iniciar la prueba
+# Instrucciones para Iniciar la prueba
 Aqui el paso a paso de como iniciarlizar el proyecto,
 presento las instruciones del desarrollo y los requerimientos para el desarrollo.
 ---
