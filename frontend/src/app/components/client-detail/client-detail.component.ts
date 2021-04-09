@@ -18,7 +18,7 @@ export class ClientDetailComponent implements OnInit {
   clusterData: any;
   clicked:Boolean= false;
 
-  doughnutChartLabels: Label[] = ['Cluster 1', 'Cluster 2', 'Cluster 3'];
+  doughnutChartLabels: Label[] = ['Cluster 0', 'Cluster 1', 'Cluster 2'];
   doughnutChartData: MultiDataSet = [[]];
   doughnutChartType: ChartType = 'doughnut';
 

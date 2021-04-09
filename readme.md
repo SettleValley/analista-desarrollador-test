@@ -78,4 +78,7 @@ Levantar app `/frontend`
     ng serve
 ```
 
-### 
+### Kmeans Clustering (Machine Learning)
+Es uno de los algoritmos mas simples y populares, utilizados en el machine learning, 
+Se basa en agrupar puntos de datos similares y descubrir los patrones entre ellos.
+Este algoritmo K-means lo hace buscando un numero fijo (K) de grupos del conjunto de datos.
