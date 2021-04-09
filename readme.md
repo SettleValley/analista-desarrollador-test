@@ -83,4 +83,4 @@ Es uno de los algoritmos mas simples y populares, utilizados en el machine learn
 Se basa en agrupar puntos de datos similares y descubrir los patrones entre ellos.
 Este algoritmo K-means lo hace buscando un numero fijo (K) de grupos del conjunto de datos.
 
-![](https://github.com/SettleValley/analista-desarrollador-test/blob/main/analytic/app/cluster.png){width='100px'}
+![](https://github.com/SettleValley/analista-desarrollador-test/blob/main/analytic/app/cluster.png)
